@@ -17,7 +17,7 @@ def hello():
 
     return {
         "testing": True,
-        "message": Hello, world
+        "message": "Hello, world"
     }
 
 @app_routes.route("/")

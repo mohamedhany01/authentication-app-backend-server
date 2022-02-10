@@ -10,12 +10,11 @@ CORS(app)
 
 """ App Variables """
 ONE_HOUR = 1 * 60 * 60
-DATABASE_URI = f"{getenv('DATABASE_VENDOR')}://{getenv('DATABASE_USER')}:{getenv('DATABASE_PASSWORD')}@{getenv('DATABASE_URL')}/{getenv('DATABASE_NAME')}"
 APP_SECRET = getenv("SECRET")
 
 """App configrations"""
 app.config["SECRET_KEY"] = APP_SECRET
-app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URI
+app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE_ALCHEMY_URL")
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 app.config["JWT_SECRET_KEY"] = APP_SECRET
 app.config["JWT_ACCESS_TOKEN_EXPIRES"] = ONE_HOUR
